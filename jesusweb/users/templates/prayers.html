@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{{ post.post_title }}</title>
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'css/prayers.css' %}">
+</head>
+<body>
+    
+
+    <!--The nav bar of the website-->
+<nav class="nav-bar">
+    <img src="{% static 'images/new_moments_with_christ_logo 1.png' %}" alt="" class="logo">
+    <ul class="center-nav">
+        <a href="{% url 'home' %}" class="nav-link"><h5>Home</h5></a>
+        <a href="{% url 'home' %}#video-grid-container" class="nav-link"><h5>Videos</h5></a>
+        <a href="{% url 'home' %}#post-slider" class="nav-link"><h5>Sermons</h5></a>
+        <a href="{% url 'prayers' %}" class="nav-link"><h5>Prayers</h5></a>
+        <a href="https://paystack.com/pay/donationpge" class="nav-link"><h5>Donate</h5></a>
+    </ul>
+    <!-- Added menu toggle button -->
+    <button class="menu-toggle" aria-label="Menu">
+        <span class="hamburger"></span>
+        <span class="hamburger"></span>
+        <span class="hamburger"></span>
+    </button>
+</nav>
+
+<!-- Added side menu (place before closing body tag) -->
+<div class="side-menu">
+    <div class="side-menu-content">
+        <a href="{% url 'home' %}" class="nav-link"><h5>Home</h5></a>
+        <a href="{% url 'home' %}#video-grid-container" class="nav-link"><h5>Videos</h5></a>
+        <a href="{% url 'home' %}#post-slider" class="nav-link"><h5>Sermons</h5></a>
+        <a href="{% url 'prayers' %}" class="nav-link"><h5>Prayers</h5></a>
+        <a href="https://paystack.com/pay/donationpge" class="nav-link"><h5>Donate</h5></a>
+    </div>
+</div>
+    <!-- THE NAV FOR POSTS ENDS -->
+
+
+
+<!-- PRAYERS SECTION START -->
+<section class="prayers-section">
+
+  <div class="prayer-card">
+    <div class="prayer-text">
+      <h3 class="prayer-title">Online decade of the Living Rosary at 8pm</h3>
+      <p class="prayer-author"><a href="https://meet.google.com/wts-mymn-hbg">Click to join</a></p>
+      <p class="prayer-date">Daily</p>
+    </div>
+    <img src="{% static 'images/prayers1.jpeg' %}" alt="Prayer Image" class="prayer-img">
+  </div>
+
+  <div class="prayer-card">
+    <div class="prayer-text">
+      <h3 class="prayer-title">Little office of Our Lady at 9pm</h3>
+      <p class="prayer-author"><a href="https://meet.google.com/vjf-zfns-uqx">Click to join</a></p>
+      <p class="prayer-date">Daily</p>
+    </div>
+    <img src="{% static 'images/new-banner.jpeg' %}" alt="Prayer Image" class="prayer-img">
+  </div>
+</section>
+<!-- PRAYERS SECTION END -->
+
+
+
+<!--THE FOOTER STARTS-->
+
+
+ <footer>
+
+
+    <div class="footer">
+
+        <div class="side1">
+    
+            <h4 class="side1-head">Quick Links</h4>
+    
+            <a href="{% url 'home' %}" class="footer-link"><h5 class="footer-main">Home</h5></a>
+            <a href="{% url 'home' %}#about-us" class="footer-link"><h5 class="footer-main">About us</h5></a>
+            <a href="{% url 'home' %}#post-slider" class="footer-link"><h5 class="footer-main">Sermons</h5></a>
+            <a href="{% url 'home' %}#video-grid-container" class="footer-link"><h5 class="footer-main">Our videos</h5></a>
+            <a href="{% url 'prayers' %}" class="footer-link"><h5 class="footer-main">Prayers</h5></a>
+            <a href="https://paystack.com/pay/donationpge" class="footer-link"><h5 class="footer-main">Donate</h5></a>
+    
+        </div>
+    
+    
+        <div class="side1">
+    
+            <h4 class="side1-head">Coming soon!!!</h4>
+    
+            <h5 class="footer-main">Hymns</h5>
+            <h5 class="footer-main">Catholic prayers</h5>
+            <h5 class="footer-main">Inspirational coursels</h5>
+    
+    
+        </div>
+    
+    
+        <div class="side1">
+    
+            <h4 class="side1-head">Contact us</h4>
+    
+            <a href="https://mail.google.com/mail/u/2/#inbox" class="footer-link"><h5 class="footer-main">Email us</h5></a>
+    
+    
+        </div>
+    
+    
+        <div class="side1">
+    
+            <h4 class="side1-head">Follow us</h4>
+    
+            <a href="https://www.whatsapp.com/channel/0029VajdkyhCsU9XUmITrI20" class="footer-link"><h5 class="footer-main">WhatsApp</h5></a>
+            <a href="https://www.instagram.com/christforall29?igsh=YzljYTk1ODg3Zg==" class="footer-link"><h5 class="footer-main">Instagram</h5></a>
+            
+    
+    
+        </div>
+    
+    
+        
+    
+    </div>
+
+    <h5 class="footer-end">Copyright Chrsit for all | 2025</h5>
+
+ </footer>
+
+
+ <!--THE FOOTER ENDS-->
+
+
+<script>
+
+  // Side menu functionality
+    document.addEventListener('DOMContentLoaded', function() {
+        const menuToggle = document.querySelector('.menu-toggle');
+        const sideMenu = document.querySelector('.side-menu');
+        const body = document.body;
+        
+        menuToggle.addEventListener('click', function() {
+            sideMenu.classList.toggle('active');
+            body.classList.toggle('menu-open');
+        });
+        
+        // Close menu when clicking on overlay
+        body.addEventListener('click', function(e) {
+            if (body.classList.contains('menu-open') && 
+                !sideMenu.contains(e.target) && 
+                e.target !== menuToggle && 
+                !menuToggle.contains(e.target)) {
+                sideMenu.classList.remove('active');
+                body.classList.remove('menu-open');
+            }
+        });
+    });
+    
+    
+    </script>
+    
+
+
+</body>
+</html>

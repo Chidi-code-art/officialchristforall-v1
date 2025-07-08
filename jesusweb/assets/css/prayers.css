@@ -1,0 +1,416 @@
+@font-face{
+    font-family: "Poppins-Light";
+    src: url('../Fonts/Poppins-Light.ttf') format('truetype');
+}
+
+
+body{
+    font-family: 'Poppins-Light';
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    letter-spacing: 0.5px;
+}
+
+
+/*nav bar styling*/
+.nav-bar{
+    height: 10vh;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: fixed;
+    z-index: 111;
+    background-color: white;
+    width: 100%;
+    
+}
+.logo{
+    margin-left: 2%;
+    width: 3em;
+}
+.center-nav{
+    width: 20em;
+    display: flex;
+    justify-content: space-between;
+    padding-left: 0;
+    margin-right: 4%;
+}
+.nav-link{
+    color: black;
+    text-decoration: none;
+    position: relative;
+}
+.nav-link h5{
+    font-weight: 7;
+}
+.nav-link::after{
+    content: "";
+    position: absolute;
+    background-color: brown;
+    height: 2px;
+    width: 0;
+    left: 0;
+    bottom: 15px;
+    transition: 0.3s;
+}
+.nav-link:hover::after{
+    width: 100%;
+}
+.nav-end{
+    padding-left: 0;
+    margin-right: 2%;
+    width: 10em;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.login, .signup{
+    text-decoration: none;
+    color: black;
+    font-weight: 10;
+    position: relative;
+}
+.login h5{
+    font-weight: 7;
+}
+.signup h5{
+    font-weight: 7;
+}
+.login::after{
+    content: "";
+    position: absolute;
+    background-color: #FC466B;
+    height: 2px;
+    width: 0;
+    left: 0;
+    bottom: 15px;
+    transition: 0.3s;
+}
+.login:hover::after{
+    width: 100%;
+}
+
+.signup h5{
+    border-radius: 7px;
+    width: 5em;
+    display: flex;
+    justify-content: center;
+    background-color: #FC466B;
+    align-items: center;
+    height: 2em;
+    padding-left: 1em;
+    padding-right: 1em;
+    padding-top: 5%;
+    padding-bottom: 5%;
+    color: white;
+}
+.signup h5:hover{
+    border-radius: 0;
+    background-color: #ed738b;
+    transition: all ease-in-out 0.5s;
+}
+/*Responsive site*/
+/* ===== Added Side Menu Styles ===== */
+.menu-toggle {
+    display: none;
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 10px;
+    margin-right: 20px;
+    z-index: 1000;
+}
+
+.hamburger {
+    display: block;
+    width: 25px;
+    height: 3px;
+    background-color: brown;
+    margin: 5px 0;
+    transition: all 0.3s ease;
+}
+
+.side-menu {
+    position: fixed;
+    top: 0;
+    right: -100%;
+    width: 70%;
+    max-width: 300px;
+    height: 100vh;
+    background-color: white;
+    z-index: 999;
+    transition: right 0.3s ease-in-out;
+    box-shadow: -5px 0 15px rgba(0, 0, 0, 0.1);
+}
+
+.side-menu.active {
+    right: 0;
+}
+
+.side-menu-content {
+    display: flex;
+    flex-direction: column;
+    padding: 80px 20px 20px;
+    height: 100%;
+}
+
+.side-nav-link {
+    color: black;
+    text-decoration: none;
+    padding: 15px 0;
+    border-bottom: 1px solid #f0f0f0;
+    position: relative;
+}
+
+.side-nav-link h5 {
+    font-weight: 7;
+    margin: 0;
+}
+
+.side-nav-link::after {
+    content: "";
+    position: absolute;
+    background-color: brown;
+    height: 2px;
+    width: 0;
+    left: 0;
+    bottom: 10px;
+    transition: 0.3s;
+}
+
+.side-nav-link:hover::after {
+    width: 100%;
+}
+
+/* Overlay when menu is open */
+body.menu-open {
+    overflow: hidden;
+}
+
+body.menu-open::after {
+    content: "";
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    z-index: 998;
+}
+
+/* ===== Modified Media Query ===== */
+@media(max-width: 750px) {
+    .nav-bar {
+        font-size: 75%;
+    }
+}
+
+@media(max-width: 500px) {
+    .center-nav, 
+    .nav-end {
+        display: none;
+    }
+    
+    .menu-toggle {
+        display: block;
+    }
+    
+    .nav-bar {
+        justify-content: space-between;
+    }
+}
+
+
+
+
+/*PRAYERS*/
+.prayers-section {
+  padding: 2em 1em;
+  max-width: 800px;
+  padding-top: 5em;
+  padding-left: 4%;
+}
+
+.prayers-heading {
+  font-size: 1.8em;
+  color: #a52a2a;
+  margin-bottom: 1.5em;
+  text-align: left;
+}
+.prayer-author a{
+    text-decoration: none;
+    color: #a52a2a;
+}
+.prayer-card {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  margin-bottom: 1.5em;
+  border-bottom: 1px solid #ddd;
+  padding-bottom: 1em;
+  gap: 1em;
+}
+
+.prayer-text {
+  flex: 1;
+}
+
+.prayer-title {
+  font-size: 1.1em;
+  font-weight: 600;
+  margin: 0 0 0.5em 0;
+  color: #333;
+  line-height: 1.3;
+}
+
+.prayer-author {
+  font-size: 0.9em;
+  color: #e53935;
+  margin: 0;
+}
+
+.prayer-date {
+  font-size: 0.85em;
+  color: #666;
+  margin: 0.2em 0 0 0;
+}
+
+.prayer-img {
+  width: 110px;
+  height: 80px;
+  object-fit: cover;
+  border-radius: 4px;
+}
+
+/* Responsive layout for smaller devices */
+@media (max-width: 600px) {
+  .prayer-card {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .prayer-img {
+    width: 100%;
+    height: 12rem;
+    margin-top: 0.5em;
+  }
+
+  .prayer-title {
+    font-size: 1em;
+  }
+
+  .prayers-heading {
+    font-size: 1.4em;
+  }
+}
+/*FOOTER STYLING*/
+footer {
+    position: relative;
+    width: 100%;
+    height: auto;
+    background-color: brown;
+    margin-top: 2%;
+    color: white;
+    border-radius: 10px;
+    padding: 20px 0;
+}
+
+.footer {
+    display: flex;
+    justify-content: center;
+    gap: 8%;
+    flex-wrap: wrap;
+    padding: 20px;
+}
+
+.side1 {
+    min-width: 150px;
+    margin-bottom: 20px;
+}
+
+.footer-end {
+    text-align: center;
+    padding: 10px;
+}
+
+.footer-link {
+    text-decoration: none;
+    color: white;
+    display: block;
+    margin: 5px 0;
+}
+
+/* Responsive Media Queries */
+@media (max-width: 1030px) {
+    .footer {
+        gap: 6%;
+    }
+}
+
+@media (max-width: 860px) {
+    .footer {
+        gap: 5%;
+        justify-content: space-around;
+    }
+    
+    .side1 {
+        width: 40%;
+        margin-bottom: 25px;
+        text-align: left; /* Ensure left alignment */
+    }
+}
+
+@media (max-width: 670px) {
+    .footer {
+        gap: 4%;
+        justify-content: space-between;
+        padding: 20px 30px; /* Add side padding */
+    }
+    
+    .side1 {
+        width: 45%;
+    }
+}
+
+@media (max-width: 540px) {
+    .footer {
+        flex-direction: row; /* Keep row layout */
+        flex-wrap: wrap;
+        justify-content: space-between;
+        align-items: flex-start;
+        padding: 20px 25px;
+        gap: 20px 0;
+    }
+    
+    .side1 {
+        width: 48%; /* Nearly half width */
+        text-align: left; /* Explicit left alignment */
+        margin-bottom: 20px;
+    }
+    
+    /* Specific adjustment for contact section */
+    .side1:nth-child(3) {
+        width: 100%; /* Full width for contact info */
+        text-align: left;
+    }
+}
+
+@media (max-width: 450px) {
+    .footer {
+        padding: 15px 20px;
+    }
+    
+    .side1 {
+        width: 48%;
+    }
+    
+    .side1:nth-child(3),
+    .side1:nth-child(4) {
+        width: 48%; /* Keep two-column layout */
+    }
+    
+    footer {
+        border-radius: 10px;
+    }
+}
